@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #ff4e8b, #ff99ac);
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-size: 40px;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background: white;
+        color: #ff4e8b;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff4e8b;
+        color: white;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px white; }
+        to { text-shadow: 0 0 25px yellow; }
+    }
+
+    .heart {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-10vh); }
+        100% { transform: translateY(110vh); }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <h2>My Love Prashanthi 💕</h2>
+    <p>You are the most beautiful part of my life.  
+       I am so lucky to have you forever 💖</p>
+
+    <button onclick="showMessage()">Click for Surprise 💌</button>
+</div>
+
+<script>
+function showMessage() {
+    alert("Prashanthi ❤️\n\nWill you be my forever Valentine?\n\nI Love You So Much 💖");
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
